@@ -1,0 +1,21 @@
+YARN :- Yet Another Resource Negotiator
+
+MapReduce2 has replace old daemon process Job Tracker and Task Tracker with YARN components Resource Manager and Node Manager respectively.
+These two components are responsible for executing distributed data computation jobs in Hadoop 2
+
+Demons
+1.Resource Manager
+2.Node Manager
+
+
+1. Resource Manager
+	1.1 This daemon process runs on master node (may run on the same machine as name node for smaller clusters)
+	1.2 It is responsible for getting job submitted from client and schedule it on cluster, monitoring running jobs on cluster and allocating proper resources on the slave node
+	1.3 It communicates with Node Manager daemon process on the slave node to track the resource utilization
+ 	1.4 It uses two other processes named Application Manager and Scheduler for MapReduce task and resource management
+
+2. Node Manager
+	2.1 This daemon process runs on slave nodes (normally on HDFS Data node machines)
+	2.2 It is responsible for coordinating with Resource Manager for task scheduling and tracking the resource utilization on the slave node
+	2.3 It also reports the resource utilization back to the Resource Manager
+	2.4 It uses other daemon process like Application Master and Container for MapReduce task scheduling and execution on the slave node

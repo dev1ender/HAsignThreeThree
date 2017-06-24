@@ -1,0 +1,12 @@
+Mapreducce:
+MapReduce is a Java-based system created by Google where the actual data from the HDFS store gets processed efficiently.
+MapReduce breaks down a big data processing job into smaller tasks. MapReduce is responsible for the analysing large
+datasets in parallel before reducing it to find the results. In the Hadoop ecosystem, Hadoop MapReduce is a framework 
+based on YARN architecture. YARN based Hadoop architecture, supports parallel processing of huge data sets and MapReduce
+provides the framework for easily writing applications on thousands of nodes, considering fault and failure management.
+
+The basic principle of operation behind MapReduce is that the “Map” job sends a query for processing to various nodes in a Hadoop cluster
+and the “Reduce” job collects all the results to output into a single value. Map Task in the Hadoop ecosystem takes input data and splits
+into independent chunks and output of this task will be the input for Reduce Task. In The same Hadoop ecosystem Reduce task combines Mapped data
+tuples into smaller set of tuples. Meanwhile, both input and output of tasks are stored in a file system. MapReduce takes care of scheduling jobs,
+monitoring jobs and re-executes the failed task

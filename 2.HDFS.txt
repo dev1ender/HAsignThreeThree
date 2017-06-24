@@ -1,0 +1,43 @@
+Hdfs :
+The default big data storage layer for Apache Hadoop is HDFS. Users can dump huge datasets into HDFS and the data will sit there nicely 
+until the user wants to leverage it for analysis. HDFS component creates several replicas of the data block to be distributed across different clusters 
+for reliable and quick data access.
+HDFS comprises of 3 important components-NameNode, DataNode and Secondary NameNode. 
+HDFS operates on a Master-Slave architecture model where the NameNode acts as the master node for keeping a track of the storage cluster
+ and the DataNode acts as a slave node summing up to the various systems within a Hadoop cluster.
+
+These are Three daemons of HDFS
+1. Name Node
+2. Secondary Namenode
+3. Data node
+
+1.NameNode
+
+	1.1 Contains Hadoop FileSystem Tree and other metadata information about files and directories.
+
+	1.2 Contains in-memory mapping of which blocks are stored in which datanode.
+
+	1.3 Namenode contains two important file on its hard disk
+		fsimage
+		Edits
+
+
+2.Secondary Namenode
+
+	2.1 Performs house-keeping activities for namenode, like periodic merging of namespace and edits.
+
+	2.2 This is not a back up for namenode.
+
+
+3.DataNode
+
+	3.1 Stores actual data blocks of file in HDFS on its own local disk.
+	
+	3.2 Sends signals to NameNode periodically (called as Heartbeat) to verify it is active.
+
+	3.3 Sends block reporting to the nameode on cluster startup as well as periodically at every 10th Heartbeat.
+
+	3.4 The data node are the workhorse of the system.
+
+	3.5 They perform all the block operation including periodic checksum. They receive instructions from the name node of where to put the blocks and how to put the blocks. 
+

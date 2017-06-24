@@ -1,0 +1,3 @@
+Hadoop Common
+Apache Foundation has pre-defined set of utilities and libraries that can be used by other modules within the Hadoop ecosystem. 
+For example, if HBase and Hive want to access HDFS they need to make of Java archives (JAR files) that are stored in Hadoop Common.
